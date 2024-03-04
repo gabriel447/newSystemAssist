@@ -1,12 +1,11 @@
 <?php
 
-class Item {
+class Device{
     private $category;
     private $brand;
     private $model;
     private $serial;
     private $ean;
-    private $checklist;
 
     function __construct($category,$brand,$model,$serial,$ean) {
         $this->checkCategory($category);
@@ -14,7 +13,7 @@ class Item {
         $this->model = $model;
         $this->serial = $serial;
         $this->ean = $ean;
-        $this->assignChecklist();
+        $this->assignCellChecklist();
     }
 
     private function checkCategory($category) {
@@ -22,23 +21,24 @@ class Item {
             echo('Categoria inválida.');
             exit();
         }
-            $this->category = $category;
+        $this->category = $category;
     }
 
-    private function assignChecklist() {
+    private function assignCellChecklist() {
         if ($this->category == 1) {
             $this->checklist = new Checklist();
-            $this->checklist->addItem("Damage");
-            $this->checklist->addItem("Screen");
-            $this->checklist->addItem("System");
-            $this->checklist->addItem("Usb");
-            $this->checklist->addItem("Battery");
-            $this->checklist->addItem("Camera");
-            $this->checklist->addItem("Sensors");
-            $this->checklist->addItem("Bluetooth");
-            $this->checklist->addItem("Wifi");
-            $this->checklist->addItem("Call");
-            $this->checklist->addItem("Mobile Data");
+            $this->checklist->addItem("Damage", "ok");
+            $this->checklist->addItem("Screen", "ok");
+            $this->checklist->addItem("System", "ok");
+            $this->checklist->addItem("Usb", "ok");
+            $this->checklist->addItem("Battery", "ok");
+            $this->checklist->addItem("Camera", "ok");
+            $this->checklist->addItem("Sensors", "ok");
+            $this->checklist->addItem("Bluetooth", "ok");
+            $this->checklist->addItem("Wifi", "ok");
+            $this->checklist->addItem("Call", "ok");
+            $this->checklist->addItem("MobileData", "ok");
         } 
     }
 }
+

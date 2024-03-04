@@ -2,16 +2,24 @@
 
 class Checklist {
     private static $id = 0;
-    private $category;
-    private $procedure;
+    private $items;
 
-    public function __construct($category,$procedure) {
+
+    public function __construct() {
         self::$id++;
-        $this->category = $category;
-        $this->procedure = $procedure; 
+        $this->items = [];
     }
 
-    private static function getNextId() {
+    private static function getNextId($id) {
         return Checklist::$id;
     }
+      
+    function addItem($item) {
+        $this->items[] = $item;
+    }
+      
+    function getItems() {
+        return $this->items;
+    }
+    
 }

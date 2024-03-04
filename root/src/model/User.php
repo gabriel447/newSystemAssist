@@ -1,14 +1,18 @@
 <?php
 
+namespace root\src\model;
+
 class User {
     private $name;
+    private $cpf;
     private $type;
     private $login;
     private $password;
     
-    public function __construct($name,$login,$password) {
+    public function __construct($name,$cpf,$login,$password) {
         $this->name = $name;
-        $this->type = 2;
+        $this->cpf = $cpf;
+        $this->type = 'Administrador';
         $this->login = $login;
         $this->checkLength($password);
     }
@@ -21,5 +25,4 @@ class User {
         }
             $this->password = $password;
     }
-
 }

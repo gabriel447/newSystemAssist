@@ -1,17 +1,18 @@
 <?php 
 
 class Checklist {
-    private static $id = 1;
-    private $categories;
-    private $procedures;
+    private static $id = 0;
+    private $category;
+    private $procedure;
 
-    public function __construct($id, $categories, $procedures) {
+    public function __construct($category, $procedure) {
         self::$id++;
-        $this->categories = $categories;
-        $this->procedures = $procedures;
+        // echo "New Checklist created with ID: " . self::$id . PHP_EOL;
+        $this->category = $category;
+        $this->procedure = $procedure; 
     }
 
-    private  static function getNextId() {
+    private static function getNextId() {
         return Checklist::$id;
     }
 }

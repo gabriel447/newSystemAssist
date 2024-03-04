@@ -5,9 +5,8 @@ class Checklist {
     private $category;
     private $procedure;
 
-    public function __construct($category, $procedure) {
+    public function __construct($category,$procedure) {
         self::$id++;
-        // echo "New Checklist created with ID: " . self::$id . PHP_EOL;
         $this->category = $category;
         $this->procedure = $procedure; 
     }

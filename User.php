@@ -6,7 +6,7 @@ class User {
     private $login;
     private $password;
     
-    public function __construct(String $name, String  $login, String $password) {
+    public function __construct($name,$login,$password) {
         $this->name = $name;
         $this->type = 2;
         $this->login = $login;
@@ -15,13 +15,12 @@ class User {
 
     private function checkLength($password)
     {
-        if (strlen($password < 8)) 
+        if (strlen($password > 8)) 
         {
-            echo('A senha precisa ter no minimo oito caracteres.');
-            exit();
+            $this->password = $password;
         }
-
-        $this->password = $password;
+        echo('A senha precisa ter no minimo oito caracteres.');
+        exit();
     }
 
 }

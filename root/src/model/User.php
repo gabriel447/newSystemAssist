@@ -19,8 +19,8 @@ class User {
 
     private function checkLength($password)
     {
-        if (strlen($password < 8)) {
-            echo('A senha precisa ter no minimo oito caracteres.');
+        if (strlen(is_string($password) < 8)) {
+            echo('A senha precisa ter mais que 8 caracteres.');
             exit();
         }
             $this->password = $password;

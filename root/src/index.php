@@ -1,6 +1,6 @@
 <?php
 
-namespace newSystemAssist\root\src;
+namespace root\src;
 
 use root\src\model\User;
 use root\src\model\Device;

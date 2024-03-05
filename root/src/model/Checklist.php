@@ -3,30 +3,59 @@
 namespace root\src\model;
 
 class Checklist {
-    private $id;
+    private static $id = 0;
     private $category;
     private $items = [];
+    private $checklistId;
 
     public function __construct($category) {
+        //aqui gera o id no construtor
+        self::$id++;
+        //aqui atribui esse id a checkListId e mostra;
+        $this->checklistId = self::$id;
+
         $this->category = $category;
-        $this->showChecklist();
+        $this->addChecklist();
     }
     
-    private function showChecklist() {
+    private function addChecklist() {
         if ($this->category === 'Celular') {
-            $this->items['Damage'] = '';
-            $this->items['Screen'] = '';
-            $this->items['System'] = '';
-            $this->items['Usb'] = '';
-            $this->items['Battery'] = '';
-            $this->items['Camera'] = '';
-            $this->items['Sensors'] = '';
-            $this->items['Bluetooth'] = '';
-            $this->items['Wifi'] = '';
-            $this->items['Call'] = '';
-            $this->items['MobileData'] = '';
+            $this->items[] = [
+                'Damage' => 'ok',
+                'Screen' => 'ok',
+                'Board' => 'ok',
+                'System' => 'ok',
+                'Usb' => 'ok',
+                'Battery' => 'ok',
+                'Camera' => 'ok',
+                'Sensors' => 'ok',
+                'Bluetooth' => 'ok',
+                'Wifi' => 'ok',
+                'Call' => 'ok',
+                'MobileData' => 'ok'
+            ];
         } elseif ($this->category === 'Computador') {
-            // adicione aqui o checklist de computadores
+            $this->items[] = [
+                'Damage' => 'ok',
+                'PowerSupply' => 'ok',
+                'MotherBoard' => 'ok',
+                'CPU' => 'ok',  
+                'RAM' => 'ok',
+                'HD' => 'ok',
+                'OperationalSystem' => 'ok', 
+                'GraphicsOnboard' => 'ok', 
+                'GraphicsOffboard' => 'ok', 
+                'Sound' => 'ok',
+                'Cleanned' => 'ok',
+                'ThermalPaste' => 'ok',
+                'Fans/Coolers' => 'ok',
+                'Screen' => 'ok',
+                'Ports' => 'ok',
+                'Usb' => 'ok',
+                'Keyboard' => 'ok',
+                'Touchpad' => 'ok',
+                'Cables' => 'ok'
+            ];
         }
     
         return $this->items;

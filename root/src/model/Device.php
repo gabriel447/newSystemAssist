@@ -11,11 +11,20 @@ class Device {
     private $checklist;
 
     function __construct($category,$brand,$model,$serial,$ean) {
+        $this->category = $this->getCategory($category);
         $this->checklist = $this->getChecklist($category);
         $this->brand = $brand;
         $this->model = $model;
         $this->serial = $serial;
         $this->ean = $ean;
+    }
+
+    private function getCategory($category){
+        if ($category == 1) {
+            return $this->category = "Celular";
+        } elseif($category == 2) {
+            return $this->category = "Computador";
+        }
     }
 
     private function getChecklist($category){
